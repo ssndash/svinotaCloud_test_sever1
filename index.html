@@ -1,33 +1,37 @@
 <!DOCTYPE html>
-<html lang="ru" data-theme="dark"> <head>
+<html lang="ru">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>svinotaCloud | Хранилище</title>
+    <title>svinotaCloud — Облако</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <div class="theme-toggle" id="themeToggle">
-        <span id="themeIcon">🌙</span>
-    </div>
-
     <div class="container">
-        <div class="header">
-            <div class="logo-circle">
-                <img src="https://via.placeholder.com/80/ff9900/ffffff?text=🐷" alt="svinotaCloud Logo">
-            </div>
-            <h1>svinotaCloud</h1>
-            <p>Хранилище От svinotaServices</p>
-        </div>
+        <header>
+            <img src="https://github.com/ssndash/svinotaCloud_test_testgithub.io/blob/main/543848034-f0ad5ec1-e428-414f-b97f-c90b239471e3.png?raw=true" alt="Logo" class="logo">
+            <h1>svinota<span>Cloud</span></h1>
+        </header>
 
-        <div class="upload-card">
-            <input type="file" id="fileInput" hidden>
-            <label for="fileInput" class="drop-zone" id="dropZone">
-                <span class="icon">☁️</span>
-                <span class="text">Закинуть файл в облако</span>
-            </label>
-            <div id="status" class="status-msg"></div>
-        </div>
+        <main class="upload-card">
+            <div class="input-group">
+                <label>GitHub Token:</label>
+                <input type="password" id="ghToken" placeholder="github_pat_...">
+            </div>
+            
+            <div class="input-group">
+                <label>Репозиторий (user/repo):</label>
+                <input type="text" id="ghRepo" placeholder="username/svinota-storage">
+            </div>
+
+            <div class="file-zone">
+                <input type="file" id="fileInput">
+                <p>Выберите файл для публикации</p>
+            </div>
+
+            <button onclick="uploadToGithub()" id="uploadBtn">Опубликовать в Pages</button>
+            <div id="status"></div>
+        </main>
     </div>
 
     <script src="script.js"></script>
